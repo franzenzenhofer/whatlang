@@ -5,8 +5,12 @@
   "keywords"      : ["language", "google"],
   "author"        : "Franz Enzenhofer <f.enzenhofer@gmail.com>",
   "contributors"  : [],
-  "licenses"      : ["MIT"],
+  "licenses": [
+     {
+        "type": "MIT"
+     }
+   ],
   "dependencies"  : [],
   "main"          : "./whatlang.js",
-  "version"       : "0.1.0-0"
+  "version"       : "0.1.0-1"
 }
