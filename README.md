@@ -2,6 +2,7 @@ whatlang.js for node.js
 ===
 
 a simple wrapper around the google language detection API (V1)
+
 http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html
 
 
@@ -40,7 +41,7 @@ usage
        { userip:'74.125.224.72', key:'boguskey' });
        //throws an "ResponseStatus 400 Error: invalid key"
        
-additional methods (suppot chaining)
+additional methods (chaining supported)
 
        whatlang.setDefaultKey('your key here').setDefaultUserIp('74.125.224.72').detect('this is a very english english sentence');
        
@@ -50,8 +51,8 @@ additional methods (suppot chaining)
        //set your default user ip
        whatlang.setDefaultUserIp('74.125.224.72');
        
-      //whatlog.detect() === whatlog()
-       whatlog.detect('a string');
+      //whatlang.detect() === whatlog()
+       whatlang.detect('a string');
        
 
       

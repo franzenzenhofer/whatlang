@@ -1,0 +1,12 @@
+{
+  "name"          : "whatlang",
+  "description"   : "simple language detection module",
+  "url"           : "https://github.com/franzenzenhofer/whatlang",
+  "keywords"      : ["language", "google"],
+  "author"        : "Franz Enzenhofer <f.enzenhofer@gmail.com>",
+  "contributors"  : [],
+  "licenses"      : ["MIT"],
+  "dependencies"  : [],
+  "main"          : "./whatlang.js",
+  "version"       : "0.1.0-0"
+}
