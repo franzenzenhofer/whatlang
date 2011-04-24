@@ -6,7 +6,7 @@ whatlang detects the language of a given string - and is unbelievable easy to us
       var whatlang = require('whatlang');
       whatlang('was fuer eine sprache ist dieser satz, bitte-schoen?');
 
-whatlang uses google language detection API (V1)
+whatlang uses the google language detection API (V1)
 
 http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html
 
