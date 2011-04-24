@@ -51,7 +51,7 @@ usage
        
 additional methods (chaining supported)
 
-       whatlang.setDefaultKey('your key here').setDefaultUserIp('74.125.224.72').detect('this is a very english english sentence');
+       whatlang.setDefaultKey('your key here').setDefaultUserIp('74.125.224.72').wait(5000).detect('this is a very english english sentence').detect('das ist ein deutscher satz');
        
        //set your google key
        whatlang.setDefaultKey('your key here');
@@ -61,6 +61,11 @@ additional methods (chaining supported)
        
       //whatlang.detect() === whatlog()
        whatlang.detect('a string');
+       
+       //whatlang.wait(integer)
+       //per default whatlang waits 100ms between multiple requests to the Google API
+       //the wait-time intervall can be changed via the wait() method
+       whatlang.wait(5000);
        
 
       
