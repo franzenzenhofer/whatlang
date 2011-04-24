@@ -12,6 +12,7 @@ http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html
 
 
 install
+
       // on the command linge
       //>npm install whatlang
       var whatlang = require('whatlang');
