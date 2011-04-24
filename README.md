@@ -1,6 +1,10 @@
 whatlang.js for node.js 
 ===
 
+a simple wrapper around the google language detection API (V1)
+http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html
+
+
 install
 
       var whatlang = require('/path/to/whatlang.js');
@@ -25,12 +29,30 @@ usage
       */
       
        //with a custom callback function 
-       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }); 
+       var langinfo = whatlang('Ich bin ein kleines maedchen.',
+       function(langinf){ console.log(langinf.responseData.language); }); 
        // -> de
        
        //with a parameterObject
-       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }, { userip:'74.125.224.72', key:'boguskey' });
+       //see http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html#request_format for list of parameters
+       var langinfo = whatlang('Ich bin ein kleines maedchen.',
+       function(langinf){ console.log(langinf.responseData.language); },
+       { userip:'74.125.224.72', key:'boguskey' });
        //throws an "ResponseStatus 400 Error: invalid key"
+       
+additional methods (suppot chaining)
+
+       whatlang.setDefaultKey('your key here').setDefaultUserIp('74.125.224.72').detect('this is a very english english sentence');
+       
+       //set your google key
+       whatlang.setDefaultKey('your key here');
+       
+       //set your default user ip
+       whatlang.setDefaultUserIp('74.125.224.72');
+       
+       
+       //whatlog.detect() === whatlog()
+       whatlog.detect('a string');
        
 
       

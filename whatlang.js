@@ -124,6 +124,7 @@ var setDefaultUserIp = function(ip)
 
 
 module.exports = main;
+module.exports.detect = main;
 module.exports.wait = wait;
 module.exports.setDefaultKey = setDefaultKey;
 module.exports.setDefaultUserIp = setDefaultUserIp;
