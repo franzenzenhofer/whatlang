@@ -5,5 +5,5 @@ var iA = [
 'questa è una frase italiana',
 'esta es una sentencia de español',
 'αυτή είναι μια φράση Ελλήνων']
-
+whatlang.wait(10000);
 iA.forEach(function(s){ whatlang(s); });

@@ -9,19 +9,35 @@ var callback = function(data) {
 };
 var userip = undefined;
 var key = undefined;
+
+var createPath = function(base, o) {
+  var r = base;
+  for(var n in o) {
+    r = r + "&" + n + "=" + encodeURIComponent(o[n])
+  }
+  return r
+};
+
+
+
 var DetectLang = function(s, c) {
   var self = this;
   self.query = s;
   self.callback = c || callback;
   self.parameters = {};
+  self.setUserIp(userip);
+  self.setKey(key);
   if(self.query !== undefined) {
     self.parameters.q = self.query;
-    self.detect()
   }
 };
+
 DetectLang.prototype.setParam = function(name, value) {
   var self = this;
-  self.parameters[name] = value;
+  if(name!==undefined&&value!==undefined)
+  {
+    self.parameters[name] = value;
+  }
   return self
 };
 DetectLang.prototype.setKey = function(key) {
@@ -52,28 +68,48 @@ DetectLang.prototype.detect = function() {
   });
   return self
 };
-var createDetectLang = function(s, c, o) {
+var createDetectLang = function(s, c, paramsO) {
   var dl = new DetectLang(s, c);
-  for(var n in o) {
-    dl[n] = o[n]
+  for(var n in paramsO) {
+    dl.parameters[n] = paramsO[n]
+  }
+  if(s!==undefined)
+  {
+     self.detect();
   }
   return dl
 };
-var createPath = function(base, o) {
-  var r = base;
-  for(var n in o) {
-    r = r + "&" + n + "=" + encodeURIComponent(o[n])
-  }
-  return r
-};
 
-var main = function main(s, c, o) {
+
+var main = function main(s, c, paramsO) {
   var self = this;
   setTimeout(function() {
-    createDetectLang.apply(root, [s, c, o])
+    createDetectLang.apply(root, [s, c, paramsO])
   }, ticker);
   ticker = ticker + timeout;
-  return main
+  return module.exports;
 };
 
+var wait = function(v)
+{
+  timeout = v;
+  return module.exports;
+}
+
+var setDefaultKey = function(k)
+{
+  key = k;
+  return module.exports;
+}
+
+var setDefaultUserIp = function(ip)
+{
+  userip = ip;
+  return module.exports;
+}
+
+
 module.exports = main;
+module.exports.wait = wait;
+module.exports.setDefaultKey = setDefaultKey;
+module.exports.setDefaultUserIp = setDefaultUserIp;
