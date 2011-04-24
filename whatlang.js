@@ -56,9 +56,19 @@ DetectLang.prototype.detect = function() {
   https.get({host:host, path:mypath}, function(res) {
     if(res.statusCode === 200) {
       res.on("data", function(data) {
+        
         d = JSON.parse(data);
+        
+        //console.log(d);
         d.requestData = {query:self.query};
-        self.callback(d)
+        if(d.responseStatus===200)
+        {
+          self.callback(d)
+        }
+        else
+        {
+          throw new Error('ResponseStatus '+d.responseStatus+' Error: '+d.responseDetails)
+        }
       })
     }else {
       throw new Error("STATUS CODE " + res.statusCode + " ERROR");
@@ -75,7 +85,11 @@ var createDetectLang = function(s, c, paramsO) {
   }
   if(s!==undefined)
   {
-     self.detect();
+     dl.detect();
+  }
+  else
+  {
+    throw new Error('no string given');
   }
   return dl
 };
