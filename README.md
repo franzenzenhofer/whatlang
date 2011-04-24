@@ -1,14 +1,22 @@
 whatlang.js for node.js 
 ===
 
-a simple wrapper around the google language detection API (V1)
+whatlang detects the language of a given string - and is unbelievable easy to use
+
+      var whatlang = require('whatlang');
+      whatlang('was fuer eine sprache ist dieser satz, bitte-schoen?');
+
+whatlang uses google language detection API (V1)
 
 http://code.google.com/apis/language/translate/v1/using_rest_langdetect.html
 
 
 install
-
-      var whatlang = require('/path/to/whatlang.js');
+      // on the command linge
+      //>npm install whatlang
+      var whatlang = require('whatlang');
+      //or
+      //var whatlang = require('/path/to/whatlang.js');
       
 usage
 
