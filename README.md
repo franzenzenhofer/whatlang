@@ -25,10 +25,12 @@ usage
       */
       
        //with a custom callback function 
-       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }); // -> de
+       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }); 
+       // -> de
        
        //with a parameterObject
-       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }, { userip:'74.125.224.72', key:'boguskey' }); //throws an "ResponseStatus 400 Error: invalid key"
+       var langinfo = whatlang('Ich bin ein kleines maedchen.', function(langinf){ console.log(langinf.responseData.language); }, { userip:'74.125.224.72', key:'boguskey' });
+       //throws an "ResponseStatus 400 Error: invalid key"
        
 
       
