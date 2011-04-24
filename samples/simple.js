@@ -6,8 +6,9 @@ var iA = [
 'esta es una sentencia de español',
 'αυτή είναι μια φράση Ελλήνων']
 //whatlang.wait(100);
-//iA.forEach(function(s){ whatlang(s); });
+iA.forEach(function(s){ whatlang(s); });
 
- //var langinfo = whatlang('Ich bin ein kleines maedchen und tanze auf der berliner mauer.', function(langinf){ console.log(langinf.responseData.language); }, { userip:'74.125.224.72'});
+ 
+ var langinfo = whatlang('Ich bin ein kleines maedchen und tanze auf der berliner mauer.', function(langinf){ console.log(langinf.responseData.language); }, { userip:'74.125.224.72'});
  
  

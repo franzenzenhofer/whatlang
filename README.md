@@ -50,8 +50,7 @@ additional methods (suppot chaining)
        //set your default user ip
        whatlang.setDefaultUserIp('74.125.224.72');
        
-       
-       //whatlog.detect() === whatlog()
+      //whatlog.detect() === whatlog()
        whatlog.detect('a string');
        
 
