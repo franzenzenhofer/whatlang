@@ -1,6 +1,9 @@
 whatlang.js for node.js 
 ===
 
+**✝ December 1, 2011**
+because of Google Translation API Shutdown http://code.google.com/apis/language/translate/overview.html
+
 whatlang detects the language of a given string - and is unbelievable easy to use
 
       var whatlang = require('whatlang');
